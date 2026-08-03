@@ -758,7 +758,7 @@ function renderSetup(){
     const unitMap = unitsByArea(state.selectedAreas);
     const allUnits = Object.values(unitMap).flat();
     const allUnitBtn = el('button','quicklink','全単元');
-    allUnitBtn.onclick = ()=>{ state.selectedUnits = []; render(); };
+    allUnitBtn.onclick = ()=>{ state.selectedUnits = allUnits.slice(); render(); };
     qrow2.appendChild(allUnitBtn);
     main.appendChild(qrow2);
     main.appendChild(el('div','range-hint','未選択の場合は、選んだ分野をすべて出題します。'));
